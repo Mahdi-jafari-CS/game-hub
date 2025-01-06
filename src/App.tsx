@@ -1,18 +1,28 @@
-import { Button } from "@chakra-ui/react"
-import { RiArrowRightLine } from "react-icons/ri"
+import { Button, Grid, GridItem, Show, Stack } from "@chakra-ui/react";
+import { RiArrowRightLine } from "react-icons/ri";
 
 function App() {
- 
-
   return (
-    <div>
-      <h1>App</h1>
-      <Button variant="outline">Outline</Button>
-      <Button colorPalette="teal" variant="outline">
-        Call us <RiArrowRightLine />
-      </Button>
-    </div>
-  )
+    <Grid
+      templateAreas={{
+        base: `"nav" " main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+    >
+      <GridItem area="nav" bg="coral">
+        Nav
+      </GridItem>
+      <Stack hideBelow="lg">
+        <GridItem area="aside" bg="gold">
+          Aside
+        </GridItem>
+      </Stack>
+
+      <GridItem area="main" bg="dedgerblue">
+        Main
+      </GridItem>
+    </Grid>
+  );
 }
 
-export default App
+export default App;
