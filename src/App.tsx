@@ -1,5 +1,7 @@
 import { Button, Grid, GridItem, Show, Stack } from "@chakra-ui/react";
 import { RiArrowRightLine } from "react-icons/ri";
+import NavBar from "./components/custom/NavBar";
+
 
 function App() {
   return (
@@ -9,8 +11,8 @@ function App() {
         lg: `"nav nav" "aside main"`,
       }}
     >
-      <GridItem area="nav" bg="coral">
-        Nav
+      <GridItem area="nav">
+        <NavBar />
       </GridItem>
       <Stack hideBelow="lg">
         <GridItem area="aside" bg="gold">
